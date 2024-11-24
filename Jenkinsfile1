@@ -51,7 +51,7 @@ pipeline {
 			 script {
 			withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) 
 			{
-            sh 'docker login -u sathishsiddamsetty -p ${dockerhub}'
+            sh 'docker login -u sathishsiddamsetty -p ${docker}'
 			
 			 }
 			   sh 'docker push sathishsiddamsetty/Doc:${BUILD_NUMBER}'
@@ -72,7 +72,7 @@ pipeline {
 		
             steps {
                 echo 'Update Deployment File'
-				withCredentials([string(credentialsId: 'githubtoken', variable: 'githubtoken')]) 
+				withCredentials([string(credentialsId: 'Githubtoken', variable: 'Githubtoken')]) 
 				{
                   sh '''
                     git config user.email "sathish.ss19120@gmail.com"
@@ -83,7 +83,7 @@ pipeline {
                     
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
 
-                    git push https://${githubtoken}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                    git push https://${Githubtoken}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
 				  
                  }
