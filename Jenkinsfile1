@@ -21,10 +21,10 @@ pipeline {
                 echo 'scanning project'
                 sh 'ls -ltr'
                 
-                sh ''' mvn sonar:sonar \\
-                      -Dsonar.host.url=http://127.0.0.1:9000 \\
-                      
-                      mvn sonar:sonar -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.token=squ_aa95cd0168eb8b4402b076a73ce13f1a01813a9d'''
+                sh '''                       
+                      mvn sonar:sonar 
+                      -Dsonar.host.url=http://127.0.0.1:9000 
+                      -Dsonar.token=squ_aa95cd0168eb8b4402b076a73ce13f1a01813a9d'''
             }
     	}
 		
