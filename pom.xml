@@ -13,6 +13,10 @@
 		<sonar.host.url>http://127.0.0.1:9000/</sonar.host.url>
 
 	</properties>
+	<properties>
+                 <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        </properties>
+
     <build>
     <plugins>
         <plugin>
